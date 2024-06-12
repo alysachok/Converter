@@ -28,4 +28,50 @@ h1 {
     padding-bottom: 2.5rem;
     background-color: #fff;
     text-align: center;
-   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    background-color: #eaeef0;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+input[type="text"]:focus {
+    border-color: rgb(29, 76, 101);
+    outline: none;
+    box-shadow: 0 0 5px rgb(29, 76, 101);
+}
+
+p {
+    color: #eaeef0;
+    text-align: center;
+    font-size: medium;
+}
+
+@media (max-width: 768px) {
+
+    body,
+    html {
+        font-size: large;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body,
+    html {
+        font-size: medium;
+    }
+
+    h1 {
+        font-size: 2rem
+    }
+}

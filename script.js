@@ -72,4 +72,36 @@ function wordToNumber(word) {
     console.log(newStr);
     let newStrWitoutAnd = newStr.replace(" and ", " ");
     console.log(newStrWitoutAnd);
-    let words = newS
+    let words = newStrWitoutAnd.split(' ');
+    console.log(words);
+    let result = 0;
+    let currentNumber = 0;
+    for (let i = 0; i < words.length; i++) {
+        if (obj[words[i]] != null) {
+            currentNumber = obj[words[i]];
+            if (currentNumber >= 1000) {
+                console.log("4")
+                result = result * currentNumber;
+                currentNumber = 0;
+            } else if (currentNumber >= 100 && currentNumber < 1000) {
+                console.log("3")
+                if (result === 0) {
+                    result = currentNumber;
+                } else {
+                    result = result * currentNumber;
+                }
+                currentNumber = 0;
+            } else if (currentNumber < 100 && words[i + 1] === "hundred" && words.includes("thousand") && (i != 0)) {
+                currentNumber = currentNumber * 100;
+                result = result + currentNumber;
+                i = i + 1;
+                currentNumber = 0;
+            } else {
+                console.log("1")
+                result = result + currentNumber;
+            }
+        }
+    }
+    console.log(result)
+    return result;
+}
